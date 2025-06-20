@@ -1,0 +1,60 @@
+V "GNAT Lib v14"
+A -Og
+A -gnatA
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U geo_mag.data.egms9615%s  geo_mag-data-egms9615.ads  797f65a6 NE OO PK
+W geo_mag.data%s	geo_mag-data.ads	geo_mag-data.ali
+
+D geo_mag.ads		20250618133954 46599621 geo_mag%s
+D geo_mag-data.ads	20250620092923 209c44b1 geo_mag.data%s
+D geo_mag-data-egms9615.ads  20250603141427 59e32117 geo_mag.data.egms9615%s
+D system.ads		20240801081714 14286b0f system%s
+G a e
+G c Z s s [egms_arrayIP geo_mag__data__egms9615 5 12 none]
+X 1 geo_mag.ads
+1K9*Geo_Mag 8e12 3|4r9 103905r5
+X 2 geo_mag-data.ads
+1K25*Data 1|1k9 2|70e17 3|4r17 103905r13
+X 3 geo_mag-data-egms9615.ads
+4K22*EGMS9615 2|1k25 3|103905l18 103905e26
+5A12*EGMS_Array(float)<integer> 6r37
+6a7*Geo_Heights_Buffer{5A12}
+

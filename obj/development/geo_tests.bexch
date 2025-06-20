@@ -1,0 +1,32 @@
+[GENERATED OBJECT FILE]
+b__geo_tests.o
+[PROJECT FILES]
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/geo_tests.gpr
+20250602133259 90a1da13348899821bcbcda539005f82
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/config/geo_tests_config.gpr
+20250602133259 da951c10262a4a2ece7a93f147fddb9c
+[BOUND OBJECT FILES]
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-common.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-data.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-data-egms9615.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-convertions.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-data-initialization.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-magnetic_model.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-magnetic_model-read.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-math.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-math-compute_alf.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag.o
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_tests.o
+[GENERATED SOURCE FILES]
+b__geo_tests.ads
+b__geo_tests.adb
+b__geo_tests.ali
+[RESULTING OPTIONS]
+-L/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/
+-L/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/
+-L/home/gs/.local/share/alire/toolchains/gnat_native_14.2.1_06bb3def/lib/gcc/x86_64-pc-linux-gnu/14.2.0/adalib/
+-static
+-static-libgcc
+/home/gs/.local/share/alire/toolchains/gnat_native_14.2.1_06bb3def/lib/gcc/x86_64-pc-linux-gnu/14.2.0/adalib/libgnat.a
+-lm
+-ldl

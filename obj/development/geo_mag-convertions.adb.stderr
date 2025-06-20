@@ -1,0 +1,5 @@
+geo_mag-convertions.adb:1:09: warning: unit "Ada.Text_IO" is not referenced [-gnatwu]
+geo_mag-convertions.adb:62:80: (style) this line is too long [-gnatyM]
+geo_mag-convertions.adb:113:80: (style) this line is too long [-gnatyM]
+geo_mag-convertions.adb:115:80: (style) this line is too long [-gnatyM]
+geo_mag-convertions.adb:116:80: (style) this line is too long [-gnatyM]

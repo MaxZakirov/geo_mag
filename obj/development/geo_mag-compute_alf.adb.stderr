@@ -1,0 +1,6 @@
+geo_mag-compute_alf.adb:1:06: warning: "Ada.Numerics.Aux_Float" is an internal GNAT unit [-gnatwi]
+geo_mag-compute_alf.adb:1:06: warning: use of this unit is non-portable and version-dependent [-gnatwi]
+geo_mag-compute_alf.adb:1:18: warning: unit "Ada.Numerics.Aux_Float" is not referenced [-gnatwu]
+geo_mag-compute_alf.adb:37:27: (style) "and then" required [-gnatyB]
+geo_mag-compute_alf.adb:42:27: (style) "and then" required [-gnatyB]
+geo_mag-compute_alf.adb:80:01: (style) trailing spaces not permitted [-gnatyb]

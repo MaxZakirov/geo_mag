@@ -1,0 +1,191 @@
+V "GNAT Lib v14"
+A -Og
+A -gnatA
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U geo_mag.convertions%b	geo_mag-convertions.adb	7c0734fc NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W geo_mag%s		geo_mag.adb		geo_mag.ali
+W geo_mag.common%s	geo_mag-common.adb	geo_mag-common.ali
+W geo_mag.data%s	geo_mag-data.ads	geo_mag-data.ali
+W geo_mag.data.egms9615%s  geo_mag-data-egms9615.ads  geo_mag-data-egms9615.ali
+Z system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
+
+U geo_mag.convertions%s	geo_mag-convertions.ads	21bc7b76 EE NE OO PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W geo_mag%s		geo_mag.adb		geo_mag.ali
+W geo_mag.data%s	geo_mag-data.ads	geo_mag-data.ali
+
+D ada.ads		20240801081713 76789da1 ada%s
+D a-except.ads		20240801081713 e7970cd9 ada.exceptions%s
+D a-ioexce.ads		20240801081713 40018c65 ada.io_exceptions%s
+D a-numeri.ads		20240801081713 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20240801081713 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20240801081713 5506716e ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20240801081713 119b8fb3 ada.streams%s
+D a-string.ads		20240801081713 90ac6797 ada.strings%s
+D a-sttebu.ads		20240801081713 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20240801081713 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20240801081713 9eaa38c6 ada.tags%s
+D a-textio.ads		20240801081713 34ef47de ada.text_io%s
+D a-unccon.ads		20240801081713 0e9b276f ada.unchecked_conversion%s
+D geo_mag.ads		20250618133954 46599621 geo_mag%s
+D geo_mag-common.ads	20250611074450 b2f7a6f3 geo_mag.common%s
+D geo_mag-convertions.ads  20250620093036 4779a9e6 geo_mag.convertions%s
+D geo_mag-convertions.adb  20250618132812 434f832e geo_mag.convertions%b
+D geo_mag-data.ads	20250620092923 209c44b1 geo_mag.data%s
+D geo_mag-data-egms9615.ads  20250603141427 59e32117 geo_mag.data.egms9615%s
+D interfac.ads		20240801081713 9111f9c1 interfaces%s
+D i-cstrea.ads		20240801081713 ffd01b9d interfaces.c_streams%s
+D system.ads		20240801081714 14286b0f system%s
+D s-crtl.ads		20240801081713 beb39b9e system.crtl%s
+D s-exctab.ads		20240801081713 91bef6ef system.exception_table%s
+D s-fatflt.ads		20240801081713 11beb392 system.fat_flt%s
+D s-fatgen.ads		20240801081713 d28c6cfe system.fat_gen%s
+D s-ficobl.ads		20240801081713 dc5161d4 system.file_control_block%s
+D s-parame.ads		20240801081713 3597fc11 system.parameters%s
+D s-putima.ads		20240801081713 17291fe4 system.put_images%s
+D s-secsta.ads		20240801081713 578279f5 system.secondary_stack%s
+D s-soflin.ads		20240801081713 df77073e system.soft_links%s
+D s-stache.ads		20240801081713 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20240801081713 1c9580f6 system.standard_library%s
+D s-stoele.ads		20240801081713 ccded4e8 system.storage_elements%s
+D s-traent.ads		20240801081713 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20240801081713 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		20240801081714 d9032363 system.wch_con%s
+G a e
+G c Z s b [convert_ortho_to_ellipsoid_height geo_mag__convertions 4 13 none]
+G c Z s b [convert_wgs_to_geocentric geo_mag__convertions 7 13 none]
+G c Z s b [rotate_vector_to_geodetic geo_mag__convertions 12 13 none]
+G r c none [convert_wgs_to_geocentric geo_mag__convertions 7 13 none] [degrees_to_radians geo_mag__common 4 13 none]
+G r c none [convert_wgs_to_geocentric geo_mag__convertions 7 13 none] [radians_to_degrees geo_mag__common 2 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 17|1r6 5r6 6r6 13r11 108r11 113r14
+X 4 a-numeri.ads
+16K13*Numerics 35e17 17|5r10 6w10 13r15 108r15 113r18
+21N4*Pi 17|113r27
+X 5 a-nuelfu.ads
+18K22*Elementary_Functions[6|39] 17|5w19 13r24 108r24
+X 6 a-ngelfu.ads
+53V13*Sqrt{float} 17|26s14[5|18] 37s40[5|18]
+95V13*Sin{float} 17|19s43[5|18] 115s49[5|18] 116s82[5|18]
+105V13*Cos{float} 17|18s43[5|18] 115s82[5|18] 116s49[5|18]
+132V13*Arcsin{float} 17|39s29[5|18]
+X 12 a-textio.ads
+58K13*Text_IO 785e16 17|1w10
+X 14 geo_mag.ads
+1K9*Geo_Mag 8e12 16|1r6 3r17 5r18 5r55 8r30 9r30 10r14 13r31 14r31 15r31
+. 16r14 17r5 17|2r6 3r6 3r24 4r6 8r14 14r11 59r9 60r19 103r31 104r31 105r31
+. 106r14 110r24 121r5
+X 15 geo_mag-common.ads
+1K17*Common 7e19 17|4w14 14r19
+2V13*Radians_To_Degrees{float} 17|39s9
+4V13*Degrees_To_Radians{float} 17|17s43
+X 16 geo_mag-convertions.ads
+3K25*Convertions 14|1k9 16|17l13 17e24 17|8b22 121l13 121t24
+4V13*Convert_Ortho_To_Ellipsoid_Height{18|3F9} 5>7 17|45b13 100l8 100t41
+5r7 Wgs_Data{18|18R9} 17|46b7 63r10 64r22 68r27 99r54
+7V13*Convert_WGS_To_Geocentric{18|25R9} 8>7 9>7 17|9b13 43l8 43t33
+8r7 Ellipsoid_Parameters{18|9R9} 17|10b7 24r9 27r23 33r32
+9r7 Wgs_Data{18|18R9} 17|11b7 17r63 29r24 34r14 40r33
+12V13*Rotate_Vector_To_Geodetic{18|64R9} 13>7 14>7 15>7 17|102b13 120l8 120t33
+13r7 Magnetic_Vector{18|64R9} 17|103b7 115r28 115r61 116r28 116r61 117r28
+14r7 Spherical_Coordinates{18|25R9} 17|104b7 113r41
+15r7 Geodetic_Coordinates{18|18R9} 17|105b7 113r70
+X 17 geo_mag-convertions.adb
+16r7 Geocentric_Data{18|25R9} 37m7 38m7 39r49 40m7 42r14
+17f7 Lat_Radians{float} 18r48 19r48
+18f7 Lat_Cos{float} 29r49
+19f7 Lat_Sin{float} 27r67 35r11
+20f7 XP{float} 29m7 37r46 37r51
+20f11 ZP{float} 30m7 37r56 37r61 39r37
+21f7 N{18|3F9} 23m7 29r20 32r12
+49V16 Lerp{float} 49b16 49>22 49>33 49>44 52l11 52t15 93s12 94s15 95s15
+49f22 A{float} 51r17 51r26
+49f33 B{float} 51r22
+49f44 t{float} 51r31
+54f7 Offset_X{float} 64m10 67m7 67r19 70r26 88r18
+54f17 Offset_Y{float} 68m7 74r26 89r18
+54f27 Delta_X{float} 88m7 94r49 95r49
+54f36 Delta_Y{float} 89m7 96r15
+55i7 Post_X{integer} 70m7 71r10 72m10 72r20 79r42 83r48 88r36
+55i15 Post_Y{integer} 74m7 75r10 76m10 76r20 79r16 83r17 89r36
+55i23 Index{integer} 79m7 80r37 81r37 83m7 84r37 85r37
+56f7 Elevation_NW{float} 80m7 94r21
+56f21 Elevation_NE{float} 81m7 94r35
+56f35 Elevation_SW{float} 84m7 95r21
+56f49 Elevation_SE{float} 85m7 95r35
+57f7 EGMS96_Deviation{18|2F9} 91m7 99r21
+58a7 EGMS96_Model=60:41{19|5A12} 80r23 81r23 84r23 85r23
+110r7 Rotated_Vector{18|64R9} 115m7 116m7 117m7 119r14
+111f7 Psi{float} 113m7 115r54 115r87 116r54 116r87
+X 18 geo_mag-data.ads
+1K25*Data 16|1w14 5r26 5r63 8r38 9r38 10r22 13r39 14r39 15r39 16r22 17|2r14
+. 3w14 3r32 59r17 60r27 103r39 104r39 105r39 106r22 110r32 18|70e17
+2F9*Meters<float> 17|57r64 92r9
+3F9*Kilometers<float> 16|5r68 17|21r25 25r11 33r14 37r28 46r42 99r9
+5i4*EGMS96_Columns{integer} 17|71r23 75r23 79r25 83r31
+7i4*Scale_Factor{integer} 17|67r37 68r50
+9R9*WGS84_Ellipsoid_Parameters 16|8r43 17|10r30 18|16e14
+10f7*A{3F9} 17|24r30
+15f7*Eccentricity_Squared{float} 17|27r44 33r53
+18R9*Wgs_Coordinates 16|5r31 9r43 15r44 17|11r30 46r18 105r44 18|23e14
+19f7*Lat{float} 17|17r72 68r36 113r91
+20f7*Lon{float} 17|40r42 63r19 64r31
+21f7*Height_Ortho{3F9} 17|99r63
+22f7*Height_Geoid{3F9} 17|29r33 34r23
+25R9*Geocentric_Coordinates 16|10r27 14r44 17|11r54 16r25 104r44 18|29e14
+26f7*Lambda{float} 17|40m23
+27f7*Phig{float} 17|38m23 113r63
+28f7*R{3F9} 17|37m23 39r65
+64R9*Magnetic_Vector 16|13r44 16r27 17|103r44 106r27 110r37 18|68e14
+65f7*Bx{float} 17|115r44 116m22 116r44
+66f7*By{float} 17|117m22 117r44
+67f7*Bz{float} 17|115m22 115r77 116r77
+X 19 geo_mag-data-egms9615.ads
+4K22*EGMS9615 17|2w19 59r22 60r32 19|103905e26
+5A12*EGMS_Array(float)<integer> 17|59r31
+6a7*Geo_Heights_Buffer{5A12} 17|60r41
+

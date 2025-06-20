@@ -1,0 +1,25 @@
+[LIBRARY PATH]
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/lib/libMy_Test_Lib.a
+[OBJECT FILES]
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-common.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-convertions.o
+20250620115501
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-data-egms9615.o
+20250620115501
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-data-initialization.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-data.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-magnetic_model-read.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-magnetic_model.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-math-compute_alf.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag-math.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag.o
+20250620115456
+/home/gs/Desktop/mz_1/ORAORA/WMM_lib/geo_tests/obj/development/geo_mag_config.o
+20250620115456

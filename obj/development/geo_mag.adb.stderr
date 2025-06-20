@@ -1,0 +1,3 @@
+geo_mag.ads:2:41: (style) trailing spaces not permitted [-gnatyb]
+geo_mag.ads:3:16: (style) space required [-gnatyt]
+geo_mag.ads:4:17: (style) space required [-gnatyt]

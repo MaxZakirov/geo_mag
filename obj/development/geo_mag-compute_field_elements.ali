@@ -1,0 +1,124 @@
+V "GNAT Lib v14"
+A -Og
+A -gnatA
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U geo_mag.compute_field_elements%b  geo_mag-compute_field_elements.adb  492c9ce8 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+W geo_mag%s		geo_mag.adb		geo_mag.ali
+W geo_mag.common%s	geo_mag-common.adb	geo_mag-common.ali
+W geo_mag.data%s	geo_mag-data.ads	geo_mag-data.ali
+Z system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
+
+D ada.ads		20240801081713 76789da1 ada%s
+D a-numeri.ads		20240801081713 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20240801081713 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20240801081713 5506716e ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20240801081713 0e9b276f ada.unchecked_conversion%s
+D geo_mag.ads		20250618133954 46599621 geo_mag%s
+D geo_mag-common.ads	20250611074450 b2f7a6f3 geo_mag.common%s
+D geo_mag-compute_field_elements.adb  20250619072503 dc93772b geo_mag.compute_field_elements%s
+D geo_mag-compute_field_elements.adb  20250619072503 dc93772b geo_mag.compute_field_elements%b
+D geo_mag-data.ads	20250620092904 24a0702c geo_mag.data%s
+D system.ads		20240801081714 14286b0f system%s
+D s-exctab.ads		20240801081713 91bef6ef system.exception_table%s
+D s-fatflt.ads		20240801081713 11beb392 system.fat_flt%s
+D s-fatgen.ads		20240801081713 d28c6cfe system.fat_gen%s
+D s-stalib.ads		20240801081713 1c9580f6 system.standard_library%s
+G a e
+X 1 ada.ads
+16K9*Ada 20e8 9|3r6 53r6
+X 2 a-numeri.ads
+16K13*Numerics 35e17 9|3r10 53r10
+X 3 a-nuelfu.ads
+18K22*Elementary_Functions[4|39] 9|3w19 53r19
+X 4 a-ngelfu.ads
+105V13*Cos{float} 9|53s40[3|18]
+X 6 geo_mag.ads
+1K9*Geo_Mag 8e12 9|1r6 1r24 2r6 5r10 12r8 20r19 58r5
+X 7 geo_mag-common.ads
+1K17*Common 7e19 9|2w14 12r16 20r27
+4V13*Degrees_To_Radians{float} 9|54s9
+6V13*Calculate_Coef_Index{integer} 9|20s34
+X 9 geo_mag-compute_field_elements.adb
+5V18*Compute_Field_Elements{10|64R9} 6|1k9 9|5b18 58l13 58t35
+6r4 ALF{10|59R9} 31r17 40r17 48r17
+7r4 Mag_Model{10|37R9} 18r23 21r33 22r33
+8r4 Spherical_Harmonics{10|53R9} 26r16 28r18 29r33 35r15 37r20 38r35 44r15
+. 46r20 47r35
+9r4 Spherical_Coordinates{10|25R9} 54r29
+14r4 Field_Elements{10|64R9} 24m10 25r12 33m10 34r12 42m10 43r12 55m4 55r25
+. 57r11
+15i4 Degree{integer}
+15i12 Order{integer}
+15i19 Index{integer} 20m10 21r58 22r58 31r27 40r27 48r38
+16f4 Cos_Phi{float} 52m4 55r45
+16f13 Coef_G_Float{float} 21m10 27r18 36r18 45r18
+16f27 Coef_H_Float{float} 22m10 29r18 38r20 47r20
+18i8 Degree{integer} 19r25 20r56 26r59 30r24 35r58 44r58
+18l44 loop 50e12
+19i11 Order{integer} 20r64 28r52 29r67 37r54 38r69 39r24 46r54 47r69
+19l32 loop 49e15
+X 10 geo_mag-data.ads
+1K17*Data 9|1w14 1r32 10|70e17
+25R9*Geocentric_Coordinates 9|9r28 10|29e14
+27f7*Phig{float} 9|54r51
+31F9*Nanoteslas<float>
+34A9*Gaus_Coefficients(31F9)<integer>
+37R9*Magnetic_Model 9|7r28 10|49e14
+38i7*Max_Degree{integer} 9|18r33
+42a7*Gauss_Coeff_G{34A9} 9|21r43
+43a7*Gauss_Coeff_H{34A9} 9|22r43
+51A9*Variables_Array(float)<integer>
+53R9*Spherical_Harmonic_Variables 9|8r28 10|57e14
+54a7*Relative_Radius_Power{51A9} 9|26r36 35r35 44r35
+55a7*Cos_M_Labmda{51A9} 9|28r38 38r55 46r40
+56a7*Sin_M_Labmda{51A9} 9|29r53 37r40 47r55
+59R9*Associated_Legendre_Functions 9|6r28 10|62e14
+60a7*Pcup{51A9} 9|31r21 40r21
+61a7*Derivative_Pcup{51A9} 9|48r21
+64R9*Magnetic_Vector 9|9r59 14r42 10|68e14
+65f7*Bx{float} 9|42m25 43r27
+66f7*By{float} 9|33m25 34r27 55m19 55r40
+67f7*Bz{float} 9|24m25 25r27
+

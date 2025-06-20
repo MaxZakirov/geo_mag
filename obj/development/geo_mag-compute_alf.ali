@@ -1,0 +1,137 @@
+V "GNAT Lib v14"
+A -Og
+A -gnatA
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
+RV NO_SECONDARY_STACK
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U geo_mag.compute_alf%b	geo_mag-compute_alf.adb	75cee820 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux_float%s  a-nuaufl.ads	a-nuaufl.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+W geo_mag%s		geo_mag.adb		geo_mag.ali
+W geo_mag.common%s	geo_mag-common.adb	geo_mag-common.ali
+W geo_mag.data%s	geo_mag-data.ads	geo_mag-data.ali
+Z system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20240801081713 76789da1 ada%s
+D a-numeri.ads		20240801081713 84bea7a3 ada.numerics%s
+D a-nuaufl.ads		20240801081713 d3e63031 ada.numerics.aux_float%s
+D a-naliop.ads		20240801081713 6b421e5f ada.numerics.aux_linker_options%s
+D a-nuelfu.ads		20240801081713 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20240801081713 5506716e ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20240801081713 0e9b276f ada.unchecked_conversion%s
+D geo_mag.ads		20250618133954 46599621 geo_mag%s
+D geo_mag-common.ads	20250611074450 b2f7a6f3 geo_mag.common%s
+D geo_mag-compute_alf.adb  20250619072212 339733d2 geo_mag.compute_alf%s
+D geo_mag-compute_alf.adb  20250619072212 339733d2 geo_mag.compute_alf%b
+D geo_mag-data.ads	20250620092904 24a0702c geo_mag.data%s
+D system.ads		20240801081714 14286b0f system%s
+D s-exctab.ads		20240801081713 91bef6ef system.exception_table%s
+D s-fatflt.ads		20240801081713 11beb392 system.fat_flt%s
+D s-fatgen.ads		20240801081713 d28c6cfe system.fat_gen%s
+D s-parame.ads		20240801081713 3597fc11 system.parameters%s
+D s-secsta.ads		20240801081713 578279f5 system.secondary_stack%s
+D s-stalib.ads		20240801081713 1c9580f6 system.standard_library%s
+D s-stoele.ads		20240801081713 ccded4e8 system.storage_elements%s
+G a e
+X 1 ada.ads
+16K9*Ada 20e8 11|1r6 4r6 10r8
+X 2 a-numeri.ads
+16K13*Numerics 35e17 11|1r10 4r10 10r12
+X 3 a-nuaufl.ads
+43K22*Aux_Float 95e27 11|1w19
+X 5 a-nuelfu.ads
+18K22*Elementary_Functions[6|39] 11|4w19 10r21
+X 6 a-ngelfu.ads
+53V13*Sqrt{float} 11|22s9[5|18] 84s15[5|18]
+95V13*Sin{float} 11|21s9[5|18]
+X 8 geo_mag.ads
+1K9*Geo_Mag 8e12 11|2r6 2r24 3r6 6r10 11r8 103r5
+X 9 geo_mag-common.ads
+1K17*Common 7e19 11|3w14 11r16
+4V13*Degrees_To_Radians{float} 11|21s14
+6V13*Calculate_Coef_Index{integer} 11|30s21 33s24 38s24 43s24 44s24 70s18
+. 71s18 76s21 77s21 92s21
+X 11 geo_mag-compute_alf.adb
+6V18*Compute_ALF{12|59R9} 8|1k9 11|6b18 103l13 103t24
+7r4 Spherical_Coordinates{12|25R9} 21r34
+7i52 Max_Degree{integer} 14r8 14r27 28r23 69r23 90r23
+13i4 Functions_Amount{integer} 16r54 17r54 18r54 102r26
+15f4 X{float} 21m4 22r22 22r34 36r47 39r31 41r15 47r34 49r18 55r34 57r18
+15f7 Z{float} 22m4 34r31 36r15 41r47 49r50 59r20
+15f10 K{float} 51m16 55r55 60r20 79m10 82m13 82r18 84m10 84r21 86r73
+16a4 Pcup{12|51A9} 24m4 34m13 34r35 36r51 39m13 39r35 41r51 47m16 47r38 49r54
+. 55m16 55r38 55r59 59r24 93m10 93r28 100r26
+17a4 Derivative_Pcup{12|51A9} 25m4 35m13 36r19 40m13 41r19 48m16 49r22 56m16
+. 58r20 60r24 94m10 95r13 101r26
+18a4 Schmidt_Quasi_Norm{12|51A9} 67m4 73m7 74r9 86m10 86r42 93r45 95r41
+19i4 Index_I{integer} 30m10 34r19 35r30 39r19 40r30 47r22 48r33 55r22 56r33
+. 70m7 73r27 76m10 86r30 92m10 93r16 93r34 93r65 94r27 95r30 95r61
+19i13 Index_J{integer} 33m13 34r41 36r36 36r57 38m13 39r41 41r36 41r57 43m13
+. 55r65 60r41 71m7 74r29 77m10 86r62
+19i22 Index_L{integer} 44m13 47r44 49r39 49r60 55r44 58r37 59r30
+28i8 Degree{integer} 29r25 30r43 32r13 33r46 37r16 38r46 42r16 42r31 43r46
+. 44r46 46r24 52r26 53r32 53r51
+28l34 loop 65e12
+29i11 Order{integer} 30r51 32r22 33r58 37r31 38r58 42r41 43r58 44r58 46r16
+. 52r43
+29l32 loop 64e15
+69i8 Degree{integer} 70r40 71r40 74r51 74r72 75r25 76r43 77r43 79r22 79r51
+69l34 loop 88e12
+75i11 Order{integer} 76r51 77r51 79r31 79r60 81r13
+75l32 loop 87e15
+90i8 Degree{integer} 91r25 92r43
+90l34 loop 97e12
+91i11 Order{integer} 92r51
+91l32 loop 96e15
+X 12 geo_mag-data.ads
+1K17*Data 11|2w14 2r32 12|70e17
+25R9*Geocentric_Coordinates 11|7r28 12|29e14
+27f7*Phig{float} 11|21r56
+51A9*Variables_Array(float)<integer> 11|16r32 17r32 18r32
+59R9*Associated_Legendre_Functions 11|8r11 12|62e14
+59i40*Length{natural} 11|102m7
+60a7*Pcup{51A9} 11|100m7
+61a7*Derivative_Pcup{51A9} 11|101m7
+

@@ -1,0 +1,112 @@
+V "GNAT Lib v14"
+A -Og
+A -gnatA
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U geo_mag.data%s	geo_mag-data.ads	66c5d290 NE OO PK
+W geo_mag%s		geo_mag.adb		geo_mag.ali
+
+D geo_mag.ads		20250618133954 46599621 geo_mag%s
+D geo_mag-data.ads	20250620092923 209c44b1 geo_mag.data%s
+D system.ads		20240801081714 14286b0f system%s
+G a e
+G c Z s s [wgs84_ellipsoid_parametersIP geo_mag__data 9 9 none]
+G c Z s s [wgs_coordinatesIP geo_mag__data 18 9 none]
+G c Z s s [geocentric_coordinatesIP geo_mag__data 25 9 none]
+G c Z s s [gaus_coefficientsIP geo_mag__data 34 9 none]
+G c Z s s [seculat_variation_coefficientsIP geo_mag__data 35 9 none]
+G c Z s s [magnetic_modelIP geo_mag__data 37 9 none]
+G c Z s s [variables_arrayIP geo_mag__data 51 9 none]
+G c Z s s [spherical_harmonic_variablesIP geo_mag__data 53 9 none]
+G c Z s s [associated_legendre_functionsIP geo_mag__data 59 9 none]
+G c Z s s [magnetic_vectorIP geo_mag__data 64 9 none]
+X 1 geo_mag.ads
+1K9*Geo_Mag 8e12 2|1r17 70r5
+X 2 geo_mag-data.ads
+1K25*Data 1|1k9 2|70l13 70e17
+2F9*Meters<float>
+3F9*Kilometers<float> 10r11 11r11 12r11 21r22 22r22 28r11
+5i4*EGMS96_Columns{integer}
+6i4*EGMS96_Rows{integer}
+7i4*Scale_Factor{integer}
+9R9*WGS84_Ellipsoid_Parameters 16e14
+10f7*A{3F9}
+11f7*B{3F9}
+12f7*R{3F9}
+13f7*Flattening{float}
+14f7*Eccentricity{float}
+15f7*Eccentricity_Squared{float}
+18R9*Wgs_Coordinates 23e14
+19f7*Lat{float}
+20f7*Lon{float}
+21f7*Height_Ortho{3F9}
+22f7*Height_Geoid{3F9}
+25R9*Geocentric_Coordinates 29e14
+26f7*Lambda{float}
+27f7*Phig{float}
+28f7*R{3F9}
+31F9*Nanoteslas<float> 34r59
+32F9*Nanoteslas_Per_Year<float> 35r72
+34A9*Gaus_Coefficients(31F9)<integer> 42r28 43r28
+35A9*Seculat_Variation_Coefficients(32F9)<integer> 45r9 47r9
+37R9*Magnetic_Model 37d25 49e14
+37i25*Length{positive} 42r52 43r52 45r46 47r46
+38i7*Max_Degree{integer}
+40i7*Max_Degree_Sec_Var{integer}
+42a7*Gauss_Coeff_G{34A9}
+43a7*Gauss_Coeff_H{34A9}
+44a7*Secular_Var_G{35A9}
+46a7*Secular_Var_H{35A9}
+48f7*Base_Year{float}
+51A9*Variables_Array(float)<integer> 54r31 55r22 56r22 60r14 61r25
+53R9*Spherical_Harmonic_Variables 53d39 57e14
+53i39*Length{natural} 54r53 55r44 56r44
+54a7*Relative_Radius_Power{51A9}
+55a7*Cos_M_Labmda{51A9}
+56a7*Sin_M_Labmda{51A9}
+59R9*Associated_Legendre_Functions 59d40 62e14
+59i40*Length{natural} 60r36 61r47
+60a7*Pcup{51A9}
+61a7*Derivative_Pcup{51A9}
+64R9*Magnetic_Vector 68e14
+65f7*Bx{float}
+66f7*By{float}
+67f7*Bz{float}
+
