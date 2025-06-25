@@ -1,3 +1,0 @@
-geo_mag-compute_field_elements.adb:15:04: warning: variable "Degree" is never read and never assigned [-gnatwu]
-geo_mag-compute_field_elements.adb:15:12: warning: variable "Order" is never read and never assigned [-gnatwu]
-geo_mag-compute_field_elements.adb:25:12: warning: "Field_Elements" may be referenced before it has a value [enabled by default]

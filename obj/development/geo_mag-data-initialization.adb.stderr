@@ -1,5 +1,0 @@
-geo_mag-data-initialization.adb:4:80: (style) this line is too long: 111 [-gnatyM]
-geo_mag-data-initialization.adb:13:80: (style) this line is too long: 81 [-gnatyM]
-geo_mag-data-initialization.adb:15:09: warning: redundant conversion, expression is of type "Float" [-gnatwr]
-geo_mag-data-initialization.ads:1:06: warning: unnecessary with of ancestor [-gnatwr]
-geo_mag-data-initialization.ads:4:80: (style) this line is too long: 112 [-gnatyM]

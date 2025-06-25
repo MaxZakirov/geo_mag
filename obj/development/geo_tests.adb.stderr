@@ -1,5 +1,0 @@
-geo_tests.adb:7:04: warning: "Lat" is not modified, could be declared constant [-gnatwk]
-geo_tests.adb:8:04: warning: "Lon" is not modified, could be declared constant [-gnatwk]
-geo_tests.adb:9:04: warning: "Height" is not modified, could be declared constant [-gnatwk]
-geo_tests.adb:10:04: warning: "Input_Years" is not modified, could be declared constant [-gnatwk]
-geo_tests.adb:19:01: (style) blank line not allowed at end of file [-gnatyu]

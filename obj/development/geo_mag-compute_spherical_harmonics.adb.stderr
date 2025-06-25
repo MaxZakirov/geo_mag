@@ -1,2 +1,0 @@
-geo_mag-compute_spherical_harmonics.adb:14:04: warning: "Cos_Lamda" is not modified, could be declared constant [-gnatwk]
-geo_mag-compute_spherical_harmonics.adb:16:04: warning: "Sin_Lamda" is not modified, could be declared constant [-gnatwk]

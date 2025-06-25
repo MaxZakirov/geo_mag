@@ -1,3 +1,0 @@
-geo_mag-common.adb:18:04: (style) "end Calculate_Coef_Index" required [-gnatye]
-geo_mag-common.adb:20:01: (style) blank line not allowed at end of file [-gnatyu]
-geo_mag-common.ads:6:80: (style) this line is too long: 84 [-gnatyM]

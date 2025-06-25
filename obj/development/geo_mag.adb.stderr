@@ -1,7 +1,0 @@
-geo_mag.adb:5:06: warning: unnecessary with of self [-gnatwr]
-geo_mag.adb:58:80: (style) this line is too long: 99 [-gnatyM]
-geo_mag.adb:59:80: (style) this line is too long: 117 [-gnatyM]
-geo_mag.adb:60:80: (style) this line is too long: 99 [-gnatyM]
-geo_mag.ads:2:41: (style) trailing spaces not permitted [-gnatyb]
-geo_mag.ads:3:16: (style) space required [-gnatyt]
-geo_mag.ads:4:17: (style) space required [-gnatyt]
