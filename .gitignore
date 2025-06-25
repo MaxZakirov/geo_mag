@@ -1,4 +1,5 @@
-.obj/
+/obj/
+/bin/
 /lib/
 /alire/
 /adl/

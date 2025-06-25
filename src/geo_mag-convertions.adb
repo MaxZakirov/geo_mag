@@ -77,6 +77,8 @@ package body Geo_Mag.Convertions is
       end if;
 
       Index := Post_Y * EGMS96_Columns + Post_X;
+      Ada.Text_IO.Put_Line ("EGMS model size is" & EGMS96_Model'Length'Image);
+      Ada.Text_IO.Put_Line ("EGMS model size is" & EGMS96_Model'Size'Image);
       Elevation_NW := EGMS96_Model (Index);
       Elevation_NE := EGMS96_Model (Index + 1);
 

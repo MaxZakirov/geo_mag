@@ -1,4 +1,4 @@
-V "GNAT Lib v14"
+V "GNAT Lib v15"
 A -Og
 A -gnatA
 A -ffunction-sections
@@ -49,26 +49,26 @@ Z system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
 U geo_mag.common%s	geo_mag-common.ads	f4ae30d2 EE NE OO PK
 W geo_mag%s		geo_mag.adb		geo_mag.ali
 
-D ada.ads		20240801081713 76789da1 ada%s
-D a-numeri.ads		20240801081713 84bea7a3 ada.numerics%s
-D a-unccon.ads		20240801081713 0e9b276f ada.unchecked_conversion%s
+D ada.ads		20250425081800 76789da1 ada%s
+D a-numeri.ads		20250425081800 84bea7a3 ada.numerics%s
+D a-unccon.ads		20250425081800 0e9b276f ada.unchecked_conversion%s
 D geo_mag.ads		20250618133954 46599621 geo_mag%s
 D geo_mag-common.ads	20250611074450 b2f7a6f3 geo_mag.common%s
 D geo_mag-common.adb	20250611074457 26bcabb8 geo_mag.common%b
-D system.ads		20240801081714 14286b0f system%s
-D s-exctab.ads		20240801081713 91bef6ef system.exception_table%s
-D s-fatflt.ads		20240801081713 11beb392 system.fat_flt%s
-D s-fatgen.ads		20240801081713 d28c6cfe system.fat_gen%s
-D s-stalib.ads		20240801081713 1c9580f6 system.standard_library%s
+D system.ads		20250425081800 14286b0f system%s
+D s-exctab.ads		20250425081800 91bef6ef system.exception_table%s
+D s-fatflt.ads		20250425081800 11beb392 system.fat_flt%s
+D s-fatgen.ads		20250425081800 d28c6cfe system.fat_gen%s
+D s-stalib.ads		20250425081800 1c9580f6 system.standard_library%s
 G a e
 G c Z s b [radians_to_degrees geo_mag__common 2 13 none]
 G c Z s b [degrees_to_radians geo_mag__common 4 13 none]
 G c Z s b [calculate_coef_index geo_mag__common 6 13 none]
 X 1 ada.ads
-16K9*Ada 20e8 6|1r6 6r32 11r25
+18K9*Ada 22e8 6|1r6 6r32 11r25
 X 2 a-numeri.ads
-16K13*Numerics 35e17 6|1w10 6r36 11r29
-21N4*Pi 6|6r45 11r38
+20K13*Numerics 36e17 6|1w10 6r36 11r29
+28N4*Pi 6|6r45 11r38
 X 4 geo_mag.ads
 1K9*Geo_Mag 8e12 5|1r9 7r5 6|3r14 19r5
 X 5 geo_mag-common.ads

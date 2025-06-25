@@ -1,4 +1,1 @@
-geo_mag-data.ads:5:80: (style) this line is too long [-gnatyM]
-geo_mag-data.ads:6:80: (style) this line is too long [-gnatyM]
-geo_mag-data.ads:22:80: (style) this line is too long [-gnatyM]
-geo_mag-data.ads:35:80: (style) this line is too long [-gnatyM]
+geo_mag-data.ads:24:80: (style) this line is too long: 106 [-gnatyM]

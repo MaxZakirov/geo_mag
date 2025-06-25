@@ -1,4 +1,4 @@
-V "GNAT Lib v14"
+V "GNAT Lib v15"
 A -Og
 A -gnatA
 A -ffunction-sections
@@ -43,8 +43,8 @@ RR NO_ELABORATION_CODE
 
 U geo_mag_config%s	geo_mag_config.ads	97ca359f NE OO PU PK
 
-D geo_mag_config.ads	20250620115430 97ca359f geo_mag_config%s
-D system.ads		20240801081714 14286b0f system%s
+D geo_mag_config.ads	20250624140358 97ca359f geo_mag_config%s
+D system.ads		20250425081800 14286b0f system%s
 G a e
 X 1 geo_mag_config.ads
 5K9*Geo_Mag_Config 20l5 20e19

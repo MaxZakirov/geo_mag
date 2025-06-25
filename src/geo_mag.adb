@@ -1,6 +1,7 @@
 pragma Ada_2022;
 
 with Ada.Numerics.Elementary_Functions;
+with Ada.Text_IO;
 with Geo_Mag;
 with Geo_Mag.Convertions;
 with Geo_Mag.Data;
@@ -33,11 +34,6 @@ package body Geo_Mag is
       Geo_Mag.Data.Initialization.Init_WGS84_Ellipsoid_Parameters
         (Ellipsoid_Parameters);
 
-      Wgs_Data :=
-        (Lat          => 18.3074397892,
-         Lon          => -65.2825150965,
-         Height_Ortho => Geo_Mag.Data.Kilometers (14.11 * 10.0**(-3)),
-         Height_Geoid => 0.0);
       Wgs_Data.Height_Geoid := Convert_Ortho_To_Ellipsoid_Height (Wgs_Data);
       Geocentric_Coords :=
         Convert_WGS_To_Geocentric (Ellipsoid_Parameters, Wgs_Data);
@@ -56,13 +52,29 @@ package body Geo_Mag is
              (Geocentric_Coords, Timely_Adjusted_Model.Max_Degree);
          Field_Vector          : Magnetic_Vector;
          Magnetic_Declination  : Float;
+         Check_Sum : Float := 0.0;
       begin
+         for I in 1 .. Timely_Adjusted_Model.Length loop
+            --  Ada.Text_IO.Put_Line ("Cos_M_Labmda " & Harmonic_Variables.Cos_M_Labmda (I)'Image);
+            --  Ada.Text_IO.Put_Line ("Relative_Radius_Power " & Harmonic_Variables.Relative_Radius_Power (I)'Image);
+            --  Ada.Text_IO.Put_Line ("Sin_M_Labmda " & Harmonic_Variables.Sin_M_Labmda (I)'Image);
+            Check_Sum :=
+              Check_Sum
+              + Float (Timely_Adjusted_Model.Gauss_Coeff_G (I))
+              + Float (Timely_Adjusted_Model.Gauss_Coeff_H (I))
+              + Float (Timely_Adjusted_Model.Secular_Var_G (I))
+              + Float (Timely_Adjusted_Model.Secular_Var_H (I));
+         end loop;
+
          Field_Vector :=
            Geo_Mag.Math.Compute_Field_Elements
              (ALF                   => ALF_Values,
               Mag_Model             => Timely_Adjusted_Model,
               Spherical_Harmonics   => Harmonic_Variables,
               Spherical_Coordinates => Geocentric_Coords);
+         Ada.Text_IO.Put_Line ("Vector x is  " & Field_Vector.Bx'Image);
+         Ada.Text_IO.Put_Line ("Vector y is  " & Field_Vector.By'Image);
+         Ada.Text_IO.Put_Line ("Vector z is  " & Field_Vector.Bz'Image);
 
          Field_Vector :=
            Geo_Mag.Convertions.Rotate_Vector_To_Geodetic
