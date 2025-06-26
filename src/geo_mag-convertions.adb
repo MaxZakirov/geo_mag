@@ -46,9 +46,9 @@ package body Geo_Mag.Convertions is
      (Wgs_Data : Wgs_Coordinates) return Kilometers
    is
 
-      function Lerp (A : Float; B : Float; t : Float) return Float is
+      function Lerp (A : Float; B : Float; T : Float) return Float is
       begin
-         return A + (B - A) * t;
+         return A + (B - A) * T;
       end Lerp;
 
       Offset_X, Offset_Y, Delta_X, Delta_Y                   : Float;

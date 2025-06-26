@@ -87,15 +87,10 @@ function Geo_Mag.Magnetic_Model.Read return Geo_Mag.Data.Magnetic_Model is
          Last => Last_Pos,
          Item => Order);
 
-      --  Put ("N " & Degree'Image & " M " & Order'Image);
       Gauss_Coeff_G := Nanoteslas (Get_Next_Float);
-      --  Put (" Gauss_Coeff_G " & Gauss_Coeff_G'Image);
       Gauss_Coeff_H := Nanoteslas (Get_Next_Float);
-      -- Put (" Gauss_Coeff_H " & Gauss_Coeff_H'Image);
       Secular_Var_G := Nanoteslas_Per_Year (Get_Next_Float);
-      -- Put (" Secular_Var_G " & Secular_Var_G'Image);
       Secular_Var_H := Nanoteslas_Per_Year (Get_Next_Float);
-      -- Put_Line (" Secular_Var_H " & Secular_Var_H'Image);
    end Parse_Current_Row;
 
    function Extract_Base_Year (Years_Row : String) return Float is

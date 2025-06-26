@@ -55,9 +55,6 @@ package body Geo_Mag is
          Check_Sum : Float := 0.0;
       begin
          for I in 1 .. Timely_Adjusted_Model.Length loop
-            --  Ada.Text_IO.Put_Line ("Cos_M_Labmda " & Harmonic_Variables.Cos_M_Labmda (I)'Image);
-            --  Ada.Text_IO.Put_Line ("Relative_Radius_Power " & Harmonic_Variables.Relative_Radius_Power (I)'Image);
-            --  Ada.Text_IO.Put_Line ("Sin_M_Labmda " & Harmonic_Variables.Sin_M_Labmda (I)'Image);
             Check_Sum :=
               Check_Sum
               + Float (Timely_Adjusted_Model.Gauss_Coeff_G (I))
@@ -72,9 +69,6 @@ package body Geo_Mag is
               Mag_Model             => Timely_Adjusted_Model,
               Spherical_Harmonics   => Harmonic_Variables,
               Spherical_Coordinates => Geocentric_Coords);
-         Ada.Text_IO.Put_Line ("Vector x is  " & Field_Vector.Bx'Image);
-         Ada.Text_IO.Put_Line ("Vector y is  " & Field_Vector.By'Image);
-         Ada.Text_IO.Put_Line ("Vector z is  " & Field_Vector.Bz'Image);
 
          Field_Vector :=
            Geo_Mag.Convertions.Rotate_Vector_To_Geodetic
