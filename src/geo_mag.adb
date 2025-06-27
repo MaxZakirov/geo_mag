@@ -6,10 +6,11 @@ with Geo_Mag;
 with Geo_Mag.Convertions;
 with Geo_Mag.Data;
 with Geo_Mag.Data.Initialization;
-with Geo_Mag.Magnetic_Model.Read;
+with Geo_Mag.Magnetic_Model;
 with Geo_Mag.Common;
 with Geo_Mag.Math;
 with Geo_Mag.Math.Compute_ALF;
+with Ada.Text_IO; use Ada.Text_IO;
 
 package body Geo_Mag is
    function Compute_Magnetic_Declination
@@ -22,7 +23,7 @@ package body Geo_Mag is
       use Geo_Mag.Convertions;
 
       Base_Magnetic_Model  : constant Geo_Mag.Data.Magnetic_Model :=
-        Geo_Mag.Magnetic_Model.Read;
+        Geo_Mag.Magnetic_Model.Build_Magnetic_Model;
       Wgs_Data             : Geo_Mag.Data.Wgs_Coordinates :=
         (Lat          => Latidude,
          Lon          => Longtitude,
@@ -31,6 +32,14 @@ package body Geo_Mag is
       Geocentric_Coords    : Geo_Mag.Data.Geocentric_Coordinates;
       Ellipsoid_Parameters : Geo_Mag.Data.WGS84_Ellipsoid_Parameters;
    begin
+      --  for I in 1 .. Base_Magnetic_Model.Length loop
+      --     Put (I'Image);
+      --     Put (" Gauss_Coeff_G " & Base_Magnetic_Model.Gauss_Coeff_G (I)'Image);
+      --     Put (" Gauss_Coeff_H " & Base_Magnetic_Model.Gauss_Coeff_H (I)'Image);
+      --     Put (" Secular_Var_G " & Base_Magnetic_Model.Secular_Var_G (I)'Image);
+      --     Put_Line (" Secular_Var_G " & Base_Magnetic_Model.Secular_Var_H (I)'Image);
+      --  end loop;
+
       Geo_Mag.Data.Initialization.Init_WGS84_Ellipsoid_Parameters
         (Ellipsoid_Parameters);
 

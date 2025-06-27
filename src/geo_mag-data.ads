@@ -39,9 +39,7 @@ private package Geo_Mag.Data is
 
    type Magnetic_Model (Length : Positive) is record
       Max_Degree         :
-        Integer; -- Maximum degree of spherical harmonic model
-      Max_Degree_Sec_Var :
-        Integer; -- Maximum degree of spherical harmonic secular model
+        Integer := 0; -- Maximum degree of spherical harmonic model
       Gauss_Coeff_G      : Gaus_Coefficients (1 .. Length);
       Gauss_Coeff_H      : Gaus_Coefficients (1 .. Length);
       Secular_Var_G      : Seculat_Variation_Coefficients (1 .. Length);

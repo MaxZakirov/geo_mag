@@ -77,8 +77,6 @@ package body Geo_Mag.Convertions is
       end if;
 
       Index := Post_Y * EGMS96_Columns + Post_X;
-      Ada.Text_IO.Put_Line ("EGMS model size is" & EGMS96_Model'Length'Image);
-      Ada.Text_IO.Put_Line ("EGMS model size is" & EGMS96_Model'Size'Image);
       Elevation_NW := EGMS96_Model (Index);
       Elevation_NE := EGMS96_Model (Index + 1);
 
@@ -86,7 +84,8 @@ package body Geo_Mag.Convertions is
       Elevation_SW := EGMS96_Model (Index);
       Elevation_SE := EGMS96_Model (Index + 1);
 
-      --   Perform Bi-Linear Interpolation to compute Height above Ellipsoid:
+      --  Perform Bi-Linear Interpolation 
+      --  to compute Height above Ellipsoid:
       Delta_X := Offset_X - Float (Post_X);
       Delta_Y := Offset_Y - Float (Post_Y);
 
@@ -110,14 +109,20 @@ package body Geo_Mag.Convertions is
       use Ada.Numerics.Elementary_Functions;
 
       Rotated_Vector : Geo_Mag.Data.Magnetic_Vector;
-      Psi : Float;
+      Psi            : Float;
    begin
-      Psi := Ada.Numerics.Pi / 180.0 * (Spherical_Coordinates.Phig - Geodetic_Coordinates.Lat);
+      Psi :=
+        Ada.Numerics.Pi
+        / 180.0
+        * (Spherical_Coordinates.Phig - Geodetic_Coordinates.Lat);
 
-      Rotated_Vector.Bz := Magnetic_Vector.Bx * Sin (Psi) + Magnetic_Vector.Bz * Cos (Psi);
-      Rotated_Vector.Bx := Magnetic_Vector.Bx * Cos (Psi) - Magnetic_Vector.Bz * Sin (Psi);
+      Rotated_Vector.Bz :=
+        Magnetic_Vector.Bx * Sin (Psi) + Magnetic_Vector.Bz * Cos (Psi);
+      Rotated_Vector.Bx :=
+        Magnetic_Vector.Bx * Cos (Psi) - Magnetic_Vector.Bz * Sin (Psi);
       Rotated_Vector.By := Magnetic_Vector.By;
 
       return Rotated_Vector;
    end Rotate_Vector_To_Geodetic;
 end Geo_Mag.Convertions;
+
