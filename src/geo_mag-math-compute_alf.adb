@@ -1,4 +1,3 @@
-with Ada.Numerics.Aux_Float;
 with Geo_Mag.Data; use Geo_Mag.Data;
 with Geo_Mag.Common;
 with Ada.Numerics.Elementary_Functions;
@@ -34,12 +33,12 @@ begin
             Pcup (Index_I) := Z * Pcup (Index_J);
             Derivative_Pcup (Index_I) :=
               Z * Derivative_Pcup (Index_J) + X * Pcup (Index_J);
-         elsif Degree = 1 and Order = 0 then
+         elsif Degree = 1 and then Order = 0 then
             Index_J := Calculate_Coef_Index (Degree - 1, Order);
             Pcup (Index_I) := X * Pcup (Index_J);
             Derivative_Pcup (Index_I) :=
               X * Derivative_Pcup (Index_J) - Z * Pcup (Index_J);
-         elsif Degree > 1 and Degree /= Order then
+         elsif Degree > 1 and then Degree /= Order then
             Index_J := Calculate_Coef_Index (Degree - 2, Order);
             Index_L := Calculate_Coef_Index (Degree - 1, Order);
 
@@ -77,7 +76,7 @@ begin
          Index_J := Calculate_Coef_Index (Degree, Order - 1);
 
          K := Float (Degree - Order + 1) / Float (Degree + Order);
-         
+
          if Order = 1 then
             K := K * 2.0;
          end if;

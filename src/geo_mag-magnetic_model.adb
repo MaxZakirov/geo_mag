@@ -1,5 +1,4 @@
 with Geo_Mag.Data; use Geo_Mag.Data;
-with Ada.Text_IO;  use Ada.Text_IO;
 with Geo_Mag.Common;
 
 package body Geo_Mag.Magnetic_Model is
@@ -35,10 +34,10 @@ package body Geo_Mag.Magnetic_Model is
 
    function Build_Magnetic_Model return Geo_Mag.Data.Magnetic_Model is
       use WMM_Coefficients_Map;
-      function Calculate_Index (N : Integer; M : Integer) return Integer 
-         renames Geo_Mag.Common.Calculate_Coef_Index;
+      function Calculate_Index (N : Integer; M : Integer) return Integer
+      renames Geo_Mag.Common.Calculate_Coef_Index;
 
-      WMM_Map : Map := Get_WMM_Ceofficients;
+      WMM_Map : constant Map := Get_WMM_Ceofficients;
 
       function Get_Max_Degree return Integer is
       begin
@@ -47,13 +46,16 @@ package body Geo_Mag.Magnetic_Model is
                return I;
             end if;
          end loop;
+
+         return 0;
       end Get_Max_Degree;
 
-      Max_Degree : Integer := Get_Max_Degree;
-      Model_Base_Year : Float := 2025.0;
-      Mag_Model  : Geo_Mag.Data.Magnetic_Model (Calculate_Index (Max_Degree, Max_Degree));
-      Map_Cursor : Cursor := First (WMM_Map);
-      Model_Row : Coefficients_Values;
+      Max_Degree      : constant Integer := Get_Max_Degree;
+      Model_Base_Year : constant Float := 2025.0;
+      Mag_Model       :
+        Geo_Mag.Data.Magnetic_Model (Calculate_Index (Max_Degree, Max_Degree));
+      Map_Cursor      : Cursor := First (WMM_Map);
+      Model_Row       : Coefficients_Values;
 
       Order, Degree, Index : Integer := 0;
    begin
@@ -68,8 +70,10 @@ package body Geo_Mag.Magnetic_Model is
          Model_Row := Element (Map_Cursor);
          Mag_Model.Gauss_Coeff_G (Index) := Nanoteslas (Model_Row (1));
          Mag_Model.Gauss_Coeff_H (Index) := Nanoteslas (Model_Row (2));
-         Mag_Model.Secular_Var_G (Index) := Nanoteslas_Per_Year (Model_Row (3));
-         Mag_Model.Secular_Var_H (Index) := Nanoteslas_Per_Year (Model_Row (4));
+         Mag_Model.Secular_Var_G (Index) :=
+           Nanoteslas_Per_Year (Model_Row (3));
+         Mag_Model.Secular_Var_H (Index) :=
+           Nanoteslas_Per_Year (Model_Row (4));
 
          Next (Map_Cursor);
       end loop;
@@ -87,7 +91,7 @@ package body Geo_Mag.Magnetic_Model is
 
       Map : WMM_Coefficients_Map.Map;
    begin
-      Map.Reserve_Capacity (Ada.Containers.Count_Type(90));
+      Map.Reserve_Capacity (Ada.Containers.Count_Type (90));
       Map.Insert (1_00, (-29351.8, 0.0, 12.0, 0.0));
       Map.Insert (1_01, (-1410.8, 4545.4, 19.7, -21.5));
       Map.Insert (2_00, (-2556.6, 0.0, -11.6, 0.0));

@@ -3,5 +3,6 @@ package Geo_Mag.Common is
 
    function Degrees_To_Radians (Degrees : Float) return Float;
 
-   function Calculate_Coef_Index (Degree : Integer; Order : Integer) return Integer;
+   function Calculate_Coef_Index
+     (Degree : Integer; Order : Integer) return Integer;
 end Geo_Mag.Common;

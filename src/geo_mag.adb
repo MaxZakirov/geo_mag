@@ -1,8 +1,6 @@
 pragma Ada_2022;
 
 with Ada.Numerics.Elementary_Functions;
-with Ada.Text_IO;
-with Geo_Mag;
 with Geo_Mag.Convertions;
 with Geo_Mag.Data;
 with Geo_Mag.Data.Initialization;
@@ -10,40 +8,30 @@ with Geo_Mag.Magnetic_Model;
 with Geo_Mag.Common;
 with Geo_Mag.Math;
 with Geo_Mag.Math.Compute_ALF;
-with Ada.Text_IO; use Ada.Text_IO;
 
 package body Geo_Mag is
    function Compute_Magnetic_Declination
-     (Latidude             : Float;
-      Longtitude           : Float;
-      Height_In_Kilometers : Float;
-      Years                : Float) return Float
+     (Latidude                       : Float;
+      Longtitude                     : Float;
+      Ellispoid_Height_In_Kilometers : Float;
+      Years                          : Float) return Float
    is
       use Geo_Mag.Data;
       use Geo_Mag.Convertions;
 
       Base_Magnetic_Model  : constant Geo_Mag.Data.Magnetic_Model :=
         Geo_Mag.Magnetic_Model.Build_Magnetic_Model;
-      Wgs_Data             : Geo_Mag.Data.Wgs_Coordinates :=
+      Wgs_Data : constant Geo_Mag.Data.Wgs_Coordinates :=
         (Lat          => Latidude,
          Lon          => Longtitude,
-         Height_Ortho => Geo_Mag.Data.Kilometers (Height_In_Kilometers),
-         others       => 0.0);
+         Height_Geoid => Kilometers (Ellispoid_Height_In_Kilometers));
       Geocentric_Coords    : Geo_Mag.Data.Geocentric_Coordinates;
       Ellipsoid_Parameters : Geo_Mag.Data.WGS84_Ellipsoid_Parameters;
    begin
-      --  for I in 1 .. Base_Magnetic_Model.Length loop
-      --     Put (I'Image);
-      --     Put (" Gauss_Coeff_G " & Base_Magnetic_Model.Gauss_Coeff_G (I)'Image);
-      --     Put (" Gauss_Coeff_H " & Base_Magnetic_Model.Gauss_Coeff_H (I)'Image);
-      --     Put (" Secular_Var_G " & Base_Magnetic_Model.Secular_Var_G (I)'Image);
-      --     Put_Line (" Secular_Var_G " & Base_Magnetic_Model.Secular_Var_H (I)'Image);
-      --  end loop;
 
       Geo_Mag.Data.Initialization.Init_WGS84_Ellipsoid_Parameters
         (Ellipsoid_Parameters);
 
-      Wgs_Data.Height_Geoid := Convert_Ortho_To_Ellipsoid_Height (Wgs_Data);
       Geocentric_Coords :=
         Convert_WGS_To_Geocentric (Ellipsoid_Parameters, Wgs_Data);
 
@@ -61,7 +49,7 @@ package body Geo_Mag is
              (Geocentric_Coords, Timely_Adjusted_Model.Max_Degree);
          Field_Vector          : Magnetic_Vector;
          Magnetic_Declination  : Float;
-         Check_Sum : Float := 0.0;
+         Check_Sum             : Float := 0.0;
       begin
          for I in 1 .. Timely_Adjusted_Model.Length loop
             Check_Sum :=

@@ -15,6 +15,5 @@ package body Geo_Mag.Common is
      (Degree : Integer; Order : Integer) return Integer is
    begin
       return Degree * (Degree + 1) / 2 + Order;
-   end;
+   end Calculate_Coef_Index;
 end Geo_Mag.Common;
-

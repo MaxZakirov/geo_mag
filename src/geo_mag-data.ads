@@ -9,9 +9,12 @@ private package Geo_Mag.Data is
    Scale_Factor   : Integer := 4; -- 15 minute spacing per degree
 
    type WGS84_Ellipsoid_Parameters is record
-      A                    : Kilometers; -- semi-major axis of the ellipsoid
-      B                    : Kilometers; -- semi-minor axis of the ellipsoid
-      R                    : Kilometers; -- mean radius of  ellipsoid
+      --  Semi-major axis of the ellipsoid
+      A                    : Kilometers;
+      --  Semi-minor axis of the ellipsoid
+      B                    : Kilometers;
+      --  Mean radius of ellipsoid
+      R                    : Kilometers;
       Flattening           : Float;
       Eccentricity         : Float;
       Eccentricity_Squared : Float;
@@ -20,8 +23,8 @@ private package Geo_Mag.Data is
    type Wgs_Coordinates is record
       Lat          : Float := 0.0;
       Lon          : Float := 0.0;
-      Height_Ortho : Kilometers := 0.0; -- height above sea level
-      Height_Geoid : Kilometers := 0.0; -- height WGS84 above ellipsoid calculated with EGMS96-15min model
+      Height_Geoid : Kilometers :=
+        0.0; -- height WGS84 above ellipsoid calculated with EGMS96-15min model
    end record;
 
    type Geocentric_Coordinates is record
@@ -38,13 +41,13 @@ private package Geo_Mag.Data is
      array (Positive range <>) of Nanoteslas_Per_Year;
 
    type Magnetic_Model (Length : Positive) is record
-      Max_Degree         :
-        Integer := 0; -- Maximum degree of spherical harmonic model
-      Gauss_Coeff_G      : Gaus_Coefficients (1 .. Length);
-      Gauss_Coeff_H      : Gaus_Coefficients (1 .. Length);
-      Secular_Var_G      : Seculat_Variation_Coefficients (1 .. Length);
-      Secular_Var_H      : Seculat_Variation_Coefficients (1 .. Length);
-      Base_Year          : Float; -- Base time of Geomagnetic model(epoch)
+      Max_Degree    : Integer :=
+        0; -- Maximum degree of spherical harmonic model
+      Gauss_Coeff_G : Gaus_Coefficients (1 .. Length);
+      Gauss_Coeff_H : Gaus_Coefficients (1 .. Length);
+      Secular_Var_G : Seculat_Variation_Coefficients (1 .. Length);
+      Secular_Var_H : Seculat_Variation_Coefficients (1 .. Length);
+      Base_Year     : Float; -- Base time of Geomagnetic model(epoch)
    end record;
 
    type Variables_Array is array (Natural range <>) of Float;

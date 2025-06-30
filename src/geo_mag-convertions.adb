@@ -1,5 +1,3 @@
-with Ada.Text_IO;
-with Geo_Mag.Data.EGMS9615;
 with Geo_Mag.Data; use Geo_Mag.Data;
 with Geo_Mag.Common;
 with Ada.Numerics.Elementary_Functions;
@@ -42,64 +40,6 @@ package body Geo_Mag.Convertions is
       return Geocentric_Data;
    end Convert_WGS_To_Geocentric;
 
-   function Convert_Ortho_To_Ellipsoid_Height
-     (Wgs_Data : Wgs_Coordinates) return Kilometers
-   is
-
-      function Lerp (A : Float; B : Float; T : Float) return Float is
-      begin
-         return A + (B - A) * T;
-      end Lerp;
-
-      Offset_X, Offset_Y, Delta_X, Delta_Y                   : Float;
-      Post_X, Post_Y, Index                                  : Integer;
-      Elevation_NW, Elevation_NE, Elevation_SW, Elevation_SE : Float;
-      EGMS96_Deviation                                       : Meters;
-      EGMS96_Model                                           :
-        Geo_Mag.Data.EGMS9615.EGMS_Array
-          renames Geo_Mag.Data.EGMS9615.Geo_Heights_Buffer;
-   begin
-      --   Find Four Nearest Geoid Height Cells for specified Latitude, Longitude;
-      if Wgs_Data.Lon < 0.0 then
-         Offset_X := Wgs_Data.Lon + 360.0;
-      end if;
-
-      Offset_X := Offset_X * Float (Scale_Factor);
-      Offset_Y := (90.0 - Wgs_Data.Lat) * Float (Scale_Factor);
-
-      Post_X := Integer (Offset_X);
-      if Post_X + 1 = EGMS96_Columns then
-         Post_X := Post_X - 1;
-      end if;
-      Post_Y := Integer (Offset_Y);
-      if Post_Y + 1 = EGMS96_Columns then
-         Post_Y := Post_Y - 1;
-      end if;
-
-      Index := Post_Y * EGMS96_Columns + Post_X;
-      Elevation_NW := EGMS96_Model (Index);
-      Elevation_NE := EGMS96_Model (Index + 1);
-
-      Index := (Post_Y + 1) * EGMS96_Columns + Post_X;
-      Elevation_SW := EGMS96_Model (Index);
-      Elevation_SE := EGMS96_Model (Index + 1);
-
-      --  Perform Bi-Linear Interpolation 
-      --  to compute Height above Ellipsoid:
-      Delta_X := Offset_X - Float (Post_X);
-      Delta_Y := Offset_Y - Float (Post_Y);
-
-      EGMS96_Deviation :=
-        Meters
-          (Lerp
-             (Lerp (Elevation_NW, Elevation_NE, Delta_X),
-              Lerp (Elevation_SW, Elevation_SE, Delta_X),
-              Delta_Y));
-
-      return
-        Kilometers (EGMS96_Deviation * 10.0**(-3)) + Wgs_Data.Height_Ortho;
-   end Convert_Ortho_To_Ellipsoid_Height;
-
    function Rotate_Vector_To_Geodetic
      (Magnetic_Vector       : Geo_Mag.Data.Magnetic_Vector;
       Spherical_Coordinates : Geo_Mag.Data.Geocentric_Coordinates;
@@ -125,4 +65,3 @@ package body Geo_Mag.Convertions is
       return Rotated_Vector;
    end Rotate_Vector_To_Geodetic;
 end Geo_Mag.Convertions;
-

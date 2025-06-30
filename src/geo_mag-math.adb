@@ -1,5 +1,4 @@
-with Geo_Mag.Data; use Geo_Mag.Data;
-with Geo_Mag.Common; use Geo_Mag.Common;
+with Geo_Mag.Common;                    use Geo_Mag.Common;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
 
 package body Geo_Mag.Math is
@@ -10,7 +9,7 @@ package body Geo_Mag.Math is
       Spherical_Coordinates : Geocentric_Coordinates) return Magnetic_Vector
    is
       Field_Elements                      : Magnetic_Vector;
-      Degree, Order, Index                : Integer;
+      Index                               : Integer;
       Cos_Phi, Coef_G_Float, Coef_H_Float : Float;
    begin
       for Degree in 1 .. Mag_Model.Max_Degree loop
@@ -47,8 +46,7 @@ package body Geo_Mag.Math is
          end loop;
       end loop;
 
-      Cos_Phi :=
-        Cos (Degrees_To_Radians (Spherical_Coordinates.Phig));
+      Cos_Phi := Cos (Degrees_To_Radians (Spherical_Coordinates.Phig));
       Field_Elements.By := Field_Elements.By / Cos_Phi;
 
       return Field_Elements;
@@ -60,9 +58,9 @@ package body Geo_Mag.Math is
       Max_Degree            : Integer) return Spherical_Harmonic_Variables
    is
       Output_Variables : Spherical_Harmonic_Variables (Max_Degree);
-      Cos_Lamda        : Float :=
+      Cos_Lamda        : constant Float :=
         Cos (Degrees_To_Radians (Spherical_Coordinates.Lambda));
-      Sin_Lamda        : Float :=
+      Sin_Lamda        : constant Float :=
         Sin (Degrees_To_Radians (Spherical_Coordinates.Lambda));
    begin
       Output_Variables.Relative_Radius_Power (0) :=
