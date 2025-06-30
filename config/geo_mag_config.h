@@ -2,7 +2,7 @@
 #ifndef GEO_MAG_CONFIG_H
 #define GEO_MAG_CONFIG_H
 
-#define CRATE_VERSION "0.1.0-dev"
+#define CRATE_VERSION "1.0.0"
 #define CRATE_NAME "geo_mag"
 
 #define ALIRE_HOST_OS "linux"

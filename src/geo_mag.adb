@@ -1,4 +1,7 @@
-pragma Ada_2022;
+--  SPDX-FileCopyrightText: 2025 Max Zakirov <ardo25968@gmail.com>
+--
+--  SPDX-License-Identifier: MIT
+----------------------------------------------------------------
 
 with Ada.Numerics.Elementary_Functions;
 with Geo_Mag.Convertions;

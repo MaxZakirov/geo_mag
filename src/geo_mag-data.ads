@@ -1,3 +1,8 @@
+--  SPDX-FileCopyrightText: 2025 Max Zakirov <ardo25968@gmail.com>
+--
+--  SPDX-License-Identifier: MIT
+----------------------------------------------------------------
+
 private package Geo_Mag.Data is
    type Meters is new Float;
    type Kilometers is new Float;

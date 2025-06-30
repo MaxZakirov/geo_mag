@@ -1,6 +1,6 @@
 name = "geo_mag"
-description = ""
-version = "0.1.0-dev"
+description = "Library for magnetic declination calculation"
+version = "1.0.0"
 
 authors = ["Max Zakirov"]
 maintainers = ["Max Zakirov <ardo25968@gmail.com>"]
