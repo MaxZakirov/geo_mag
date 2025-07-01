@@ -14,10 +14,10 @@ with Geo_Mag.Math.Compute_ALF;
 
 package body Geo_Mag is
    function Compute_Magnetic_Declination
-     (Latidude                       : Float;
-      Longtitude                     : Float;
+     (Latidude                       : WGS84_Latidude;
+      Longtitude                     : WGS84_Longtitude;
       Ellispoid_Height_In_Kilometers : Float;
-      Years                          : Float) return Float
+      Years                          : Years_Float) return Float
    is
       use Geo_Mag.Data;
       use Geo_Mag.Convertions;

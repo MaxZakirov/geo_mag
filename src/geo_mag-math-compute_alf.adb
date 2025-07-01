@@ -8,7 +8,8 @@ with Geo_Mag.Common;
 with Ada.Numerics.Elementary_Functions;
 
 --  Computes  all of the Schmidt-semi normalized associated Legendre
---  functions up to degree nMax. PLEASE NOTE: this function should be used only for nMax <= 16
+--  functions up to degree nMax.
+--  PLEASE NOTE: this function should be used only for nMax <= 16
 
 function Geo_Mag.Math.Compute_ALF
   (Spherical_Coordinates : Geocentric_Coordinates; Max_Degree : Integer)
@@ -71,8 +72,8 @@ begin
       end loop;
    end loop;
 
-   --  Compute the ration between the the Schmidt quasi-normalized associated Legendre
-   --  functions and the Gauss-normalized version.
+   --  Compute the ration between the the Schmidt quasi-normalized
+   --  associated Legendre functions and the Gauss-normalized version.
    Schmidt_Quasi_Norm (0) := 1.0;
 
    for Degree in 1 .. Max_Degree loop
@@ -105,8 +106,8 @@ begin
          Pcup (Index_I) := Pcup (Index_I) * Schmidt_Quasi_Norm (Index_I);
          Derivative_Pcup (Index_I) :=
            -Derivative_Pcup (Index_I) * Schmidt_Quasi_Norm (Index_I);
-         --  The sign is changed since the new WMM routines use derivative with respect to latitude
-         --  insted of co-latitude
+         --  The sign is changed since the new WMM routines use derivative
+         --  with respect to latitude insted of co-latitude
       end loop;
    end loop;
 
@@ -115,4 +116,3 @@ begin
       Derivative_Pcup => Derivative_Pcup,
       Length          => Functions_Amount);
 end Geo_Mag.Math.Compute_ALF;
-

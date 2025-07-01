@@ -2,6 +2,7 @@
 --
 --  SPDX-License-Identifier: MIT
 ----------------------------------------------------------------
+pragma Style_Checks (Off);
 
 with Geo_Mag.Common;                    use Geo_Mag.Common;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;

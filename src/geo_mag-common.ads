@@ -3,7 +3,7 @@
 --  SPDX-License-Identifier: MIT
 ----------------------------------------------------------------
 
-package Geo_Mag.Common is
+private package Geo_Mag.Common is
    function Radians_To_Degrees (Radians : Float) return Float;
 
    function Degrees_To_Radians (Degrees : Float) return Float;

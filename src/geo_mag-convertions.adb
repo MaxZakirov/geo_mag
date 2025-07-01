@@ -23,14 +23,16 @@ package body Geo_Mag.Convertions is
       XP, ZP          : Float;
       Local_Radius    : Kilometers;
    begin
-      --  Compute the local radius of curvature on the WGS-84 reference ellipsoid
+      --  Compute the local radius of curvature
+      --  on the WGS-84 reference ellipsoid
       Local_Radius :=
         Ellipsoid_Parameters.A
         / Kilometers
             (Sqrt
                (1.0 - Ellipsoid_Parameters.Eccentricity_Squared * Lat_Sin**2));
 
-      --  Compute ECEF Cartesian coordinates of specified point (for longitude=0)
+      --  Compute ECEF Cartesian coordinates
+      --  of specified point (for longitude=0)
       XP := Float (Local_Radius + Wgs_Data.Height_Geoid) * Lat_Cos;
       ZP :=
         Float
