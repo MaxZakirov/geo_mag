@@ -1,4 +1,4 @@
-> Ada implementation of WMM library, that calculates angle for magnetic declination.
+Ada library with implementation of WMM model for magnetic declination angle calculation.
 
 - [Official website](https://www.ncei.noaa.gov/)
 
@@ -14,15 +14,15 @@ alr with raiden --use https://github.com/MaxZakirov/geo_mag
 
 ```
 procedure Example is
-    Height : Float := 14.11 * 10.0**(-3); -- Height above allipsoid in Kilometers
+    Height : Float := 14.11 * 10.0**(-3); -- Height above ellipsoid in Kilometers
     Years  : Float := 2028.7; 
     Decl   : Float;
 begin
     -- 2028.7 M M14.11 18.3074397892 -65.2825150965
     Decl :=
        Geo_Mag.Compute_Magnetic_Declination
-          (Latitude             => 41.980736, -- WGS 84 latidute
-           Longtitude           => -91.790695,
+          (Latitude             => 41.980736,  -- WGS 84 latidute
+           Longtitude           => -91.790695, -- WGS 84 longtitude
            Ellispoid_Height_In_Kilometers => Height,
            Years                => Years);
     Put_Line (Decl'Image);
