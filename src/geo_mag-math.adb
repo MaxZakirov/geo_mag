@@ -23,6 +23,10 @@ package body Geo_Mag.Math is
             Coef_G_Float := Float (Mag_Model.Gauss_Coeff_G (Index));
             Coef_H_Float := Float (Mag_Model.Gauss_Coeff_H (Index));
 
+            --  	    nMax  	(n+2) 	  n     m            m           m
+            --       Bz =   -SUM (a/r)   (n+1) SUM  [g cos(m p) + h sin(m p)] P (sin(phi))
+            --                       n=1      	      m=0   n            n           n  
+            --  Equation 12 in the WMM Technical report.  Derivative with respect to radius.
             Field_Elements.Bz :=
               Field_Elements.Bz
               - ((Spherical_Harmonics.Relative_Radius_Power (Degree)
@@ -32,6 +36,10 @@ package body Geo_Mag.Math is
                  * Float (Degree + 1)
                  * ALF.Pcup (Index));
 
+            --  		  1 nMax  (n+2)    n     m            m           m
+            --        By =    SUM (a/r) (m)  SUM  [g cos(m p) + h sin(m p)] dP (sin(phi))
+            --                   n=1             m=0   n            n           n  
+            --   Equation 11 in the WMM Technical report. Derivative with respect to longitude, divided by radius.
             Field_Elements.By :=
               Field_Elements.By
               + (Spherical_Harmonics.Relative_Radius_Power (Degree)
@@ -41,6 +49,10 @@ package body Geo_Mag.Math is
                  * Float (Order)
                  * ALF.Pcup (Index));
 
+            --  		   nMax  (n+2) n     m            m           m
+            --        Bx = - SUM (a/r)   SUM  [g cos(m p) + h sin(m p)] dP (sin(phi))
+            --                   n=1         m=0   n            n           n  
+            --   Equation 10  in the WMM Technical report. Derivative with respect to latitude, divided by radius.
             Field_Elements.Bx :=
               Field_Elements.Bx
               - (Spherical_Harmonics.Relative_Radius_Power (Degree)
@@ -68,6 +80,8 @@ package body Geo_Mag.Math is
       Sin_Lamda        : constant Float :=
         Sin (Degrees_To_Radians (Spherical_Coordinates.Lambda));
    begin
+      --  for n = 0 ... model_order, compute (Radius of Earth / Spherical radius r)^(n+2)
+      --  for n  1..nMax-1 (this is much faster than calling pow MAX_N+1 times).
       Output_Variables.Relative_Radius_Power (0) :=
         Float ((Ellipsoid_Parameters.R / Spherical_Coordinates.R)**2);
 

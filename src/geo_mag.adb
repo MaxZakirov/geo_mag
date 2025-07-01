@@ -36,7 +36,7 @@ package body Geo_Mag is
         (Ellipsoid_Parameters);
 
       Geocentric_Coords :=
-        Convert_WGS_To_Geocentric (Ellipsoid_Parameters, Wgs_Data);
+        Convert_Geodetic_To_Spherical (Ellipsoid_Parameters, Wgs_Data);
 
       declare
          Timely_Adjusted_Model : constant Geo_Mag.Data.Magnetic_Model :=

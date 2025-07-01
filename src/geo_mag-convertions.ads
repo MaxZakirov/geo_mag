@@ -6,7 +6,10 @@
 with Geo_Mag.Data;
 
 private package Geo_Mag.Convertions is
-   function Convert_WGS_To_Geocentric
+   --  Convert geodetic coordinates, (defined by the WGS-84
+   --  reference ellipsoid), to Earth Centered Earth Fixed Cartesian
+   --  coordinates, and then to spherical coordinates.
+   function Convert_Geodetic_To_Spherical
      (Ellipsoid_Parameters : Geo_Mag.Data.WGS84_Ellipsoid_Parameters;
       Wgs_Data             : Geo_Mag.Data.Wgs_Coordinates)
       return Geo_Mag.Data.Geocentric_Coordinates;

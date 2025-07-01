@@ -9,7 +9,7 @@ with Ada.Numerics.Elementary_Functions;
 with Ada.Numerics;
 
 package body Geo_Mag.Convertions is
-   function Convert_WGS_To_Geocentric
+   function Convert_Geodetic_To_Spherical
      (Ellipsoid_Parameters : WGS84_Ellipsoid_Parameters;
       Wgs_Data             : Wgs_Coordinates) return Geocentric_Coordinates
    is
@@ -21,29 +21,32 @@ package body Geo_Mag.Convertions is
       Lat_Cos         : constant Float := Cos (Lat_Radians);
       Lat_Sin         : constant Float := Sin (Lat_Radians);
       XP, ZP          : Float;
-      N               : Kilometers;
+      Local_Radius    : Kilometers;
    begin
-      N :=
+      --  Compute the local radius of curvature on the WGS-84 reference ellipsoid
+      Local_Radius :=
         Ellipsoid_Parameters.A
         / Kilometers
             (Sqrt
                (1.0 - Ellipsoid_Parameters.Eccentricity_Squared * Lat_Sin**2));
 
-      XP := Float (N + Wgs_Data.Height_Geoid) * Lat_Cos;
+      --  Compute ECEF Cartesian coordinates of specified point (for longitude=0)
+      XP := Float (Local_Radius + Wgs_Data.Height_Geoid) * Lat_Cos;
       ZP :=
         Float
-          (N
+          (Local_Radius
            * Kilometers (1.0 - Ellipsoid_Parameters.Eccentricity_Squared)
            + Wgs_Data.Height_Geoid)
         * Lat_Sin;
 
+      --  Compute spherical radius and angle lambda and phi of specified point
       Geocentric_Data.R := Kilometers (Sqrt (XP * XP + ZP * ZP));
       Geocentric_Data.Phig :=
         Radians_To_Degrees (Arcsin (ZP / Float (Geocentric_Data.R)));
       Geocentric_Data.Lambda := Wgs_Data.Lon;
 
       return Geocentric_Data;
-   end Convert_WGS_To_Geocentric;
+   end Convert_Geodetic_To_Spherical;
 
    function Rotate_Vector_To_Geodetic
      (Magnetic_Vector       : Geo_Mag.Data.Magnetic_Vector;

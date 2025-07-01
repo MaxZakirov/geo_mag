@@ -8,6 +8,9 @@ with Ada.Containers;
 with Ada.Containers.Hashed_Maps;
 
 private package Geo_Mag.Magnetic_Model is
+   --  Time change the Model coefficients from the base year of the model using secular variation coefficients.
+   --  Store the coefficients of the static model with their values advanced from epoch t0 to epoch t.
+   --  Copy the SV coefficients. If input "t�" is the same as "t0", then this is merely a copy operation.
    function Timely_Adjust_Magnetic_Model
      (Input_Years : Float; Base_Model : Geo_Mag.Data.Magnetic_Model)
       return Geo_Mag.Data.Magnetic_Model;
