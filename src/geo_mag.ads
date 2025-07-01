@@ -9,7 +9,7 @@ package Geo_Mag is
    subtype Years_Float is Float range 1900.0 .. 3000.0;
 
    function Compute_Magnetic_Declination
-     (Latidude                       : WGS84_Latidude;
+     (Latitude                       : WGS84_Latidude;
       Longtitude                     : WGS84_Longtitude;
       Ellispoid_Height_In_Kilometers : Float;
       Years                          : Years_Float) return Float;

@@ -14,7 +14,7 @@ with Geo_Mag.Math.Compute_ALF;
 
 package body Geo_Mag is
    function Compute_Magnetic_Declination
-     (Latidude                       : WGS84_Latidude;
+     (Latitude                       : WGS84_Latidude;
       Longtitude                     : WGS84_Longtitude;
       Ellispoid_Height_In_Kilometers : Float;
       Years                          : Years_Float) return Float
@@ -25,7 +25,7 @@ package body Geo_Mag is
       Base_Magnetic_Model  : constant Geo_Mag.Data.Magnetic_Model :=
         Geo_Mag.Magnetic_Model.Build_Magnetic_Model;
       Wgs_Data : constant Geo_Mag.Data.Wgs_Coordinates :=
-        (Lat          => Latidude,
+        (Lat          => Latitude,
          Lon          => Longtitude,
          Height_Geoid => Kilometers (Ellispoid_Height_In_Kilometers));
       Geocentric_Coords    : Geo_Mag.Data.Geocentric_Coordinates;
