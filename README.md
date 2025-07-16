@@ -7,7 +7,7 @@ Ada library with implementation of WMM model for magnetic declination angle calc
 Use Alire to install and compile the library:
 
 ```
-alr with raiden --use https://github.com/MaxZakirov/geo_mag
+alr with geo_mag --use https://github.com/MaxZakirov/geo_mag
 ```
 
 ## Basic usage

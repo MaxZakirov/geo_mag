@@ -4,8 +4,6 @@
 ----------------------------------------------------------------
 
 with Geo_Mag.Data;
-with Ada.Containers;
-with Ada.Containers.Hashed_Maps;
 
 private package Geo_Mag.Magnetic_Model is
    --  Time change the Model coefficients from the base year
@@ -22,16 +20,17 @@ private package Geo_Mag.Magnetic_Model is
 
 private
 
-   type Coefficients_Values is array (1 .. 4) of Float;
+   type Coefficient_Record is record
+      Degree        : Integer;
+      Order         : Integer;
+      Gauss_Coeff_G : Geo_Mag.Data.Nanoteslas;
+      Gauss_Coeff_H : Geo_Mag.Data.Nanoteslas;
+      Secular_Var_G : Geo_Mag.Data.Nanoteslas_Per_Year;
+      Secular_Var_H : Geo_Mag.Data.Nanoteslas_Per_Year;
+   end record;
 
-   function Hash_Int (Key : Integer) return Ada.Containers.Hash_Type;
+   type Coefficient_Record_Array is array (Positive range <>) of
+     Coefficient_Record;
 
-   package WMM_Coefficients_Map is new
-     Ada.Containers.Hashed_Maps
-       (Key_Type        => Integer,
-        Element_Type    => Coefficients_Values,
-        Hash            => Hash_Int,
-        Equivalent_Keys => "=");
-
-   function Get_WMM_Ceofficients return WMM_Coefficients_Map.Map;
+   function Get_WMM_Ceofficients return Coefficient_Record_Array;
 end Geo_Mag.Magnetic_Model;
