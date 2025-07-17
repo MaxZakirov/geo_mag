@@ -28,5 +28,6 @@ private package Geo_Mag.Math is
      (ALF                   : Associated_Legendre_Functions;
       Mag_Model             : Magnetic_Model;
       Spherical_Harmonics   : Spherical_Harmonic_Variables;
-      Spherical_Coordinates : Geocentric_Coordinates) return Magnetic_Vector;
+      Spherical_Coordinates : Geocentric_Coordinates;
+      Input_Years           : Float) return Magnetic_Vector;
 end Geo_Mag.Math;

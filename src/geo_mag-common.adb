@@ -15,10 +15,4 @@ package body Geo_Mag.Common is
    begin
       return Degrees * (Ada.Numerics.Pi / 180.0);
    end Degrees_To_Radians;
-
-   function Calculate_Coef_Index
-     (Degree : Integer; Order : Integer) return Integer is
-   begin
-      return Degree * (Degree + 1) / 2 + Order;
-   end Calculate_Coef_Index;
 end Geo_Mag.Common;

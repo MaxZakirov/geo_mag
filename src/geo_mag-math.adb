@@ -12,21 +12,34 @@ package body Geo_Mag.Math is
      (ALF                   : Associated_Legendre_Functions;
       Mag_Model             : Magnetic_Model;
       Spherical_Harmonics   : Spherical_Harmonic_Variables;
-      Spherical_Coordinates : Geocentric_Coordinates) return Magnetic_Vector
+      Spherical_Coordinates : Geocentric_Coordinates;
+      Input_Years           : Float) return Magnetic_Vector
    is
       Field_Elements                      : Magnetic_Vector;
       Index                               : Integer;
       Cos_Phi, Coef_G_Float, Coef_H_Float : Float;
+
+      function Timely_Adjust_Coeff_G (Index : Integer) return Nanoteslas
+      is (Mag_Model.Gauss_Coeff_G (Index)
+          + Nanoteslas
+              ((Input_Years - Mag_Model.Base_Year)
+               * Float (Mag_Model.Secular_Var_G (Index))));
+
+      function Timely_Adjust_Coeff_H (Index : Integer) return Nanoteslas
+      is (Mag_Model.Gauss_Coeff_H (Index)
+          + Nanoteslas
+              ((Input_Years - Mag_Model.Base_Year)
+               * Float (Mag_Model.Secular_Var_H (Index))));
    begin
       for Degree in 1 .. Mag_Model.Max_Degree loop
          for Order in 0 .. Degree loop
             Index := Calculate_Coef_Index (Degree, Order);
-            Coef_G_Float := Float (Mag_Model.Gauss_Coeff_G (Index));
-            Coef_H_Float := Float (Mag_Model.Gauss_Coeff_H (Index));
+            Coef_G_Float := Float (Timely_Adjust_Coeff_G (Index));
+            Coef_H_Float := Float (Timely_Adjust_Coeff_H (Index));
 
             --  	    nMax  	(n+2) 	  n     m            m           m
             --       Bz =   -SUM (a/r)   (n+1) SUM  [g cos(m p) + h sin(m p)] P (sin(phi))
-            --                       n=1      	      m=0   n            n           n  
+            --                       n=1      	      m=0   n            n           n
             --  Equation 12 in the WMM Technical report.  Derivative with respect to radius.
             Field_Elements.Bz :=
               Field_Elements.Bz
@@ -39,7 +52,7 @@ package body Geo_Mag.Math is
 
             --  		  1 nMax  (n+2)    n     m            m           m
             --        By =    SUM (a/r) (m)  SUM  [g cos(m p) + h sin(m p)] dP (sin(phi))
-            --                   n=1             m=0   n            n           n  
+            --                   n=1             m=0   n            n           n
             --   Equation 11 in the WMM Technical report. Derivative with respect to longitude, divided by radius.
             Field_Elements.By :=
               Field_Elements.By
@@ -52,7 +65,7 @@ package body Geo_Mag.Math is
 
             --  		   nMax  (n+2) n     m            m           m
             --        Bx = - SUM (a/r)   SUM  [g cos(m p) + h sin(m p)] dP (sin(phi))
-            --                   n=1         m=0   n            n           n  
+            --                   n=1         m=0   n            n           n
             --   Equation 10  in the WMM Technical report. Derivative with respect to latitude, divided by radius.
             Field_Elements.Bx :=
               Field_Elements.Bx
