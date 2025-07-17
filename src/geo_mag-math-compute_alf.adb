@@ -18,12 +18,10 @@ is
    use Ada.Numerics.Elementary_Functions;
    use Geo_Mag.Common;
 
-   Functions_Amount          : constant Integer :=
-     ((Max_Degree + 1) * (Max_Degree + 2) / 2) - 1;
    X, Z, K                   : Float;
-   Pcup                      : Variables_Array (0 .. Functions_Amount);
-   Derivative_Pcup           : Variables_Array (0 .. Functions_Amount);
-   Schmidt_Quasi_Norm        : Variables_Array (0 .. Functions_Amount);
+   Pcup                      : Legendre_Functions_Array (0 .. Model_Max_Index);
+   Derivative_Pcup           : Legendre_Functions_Array (0 .. Model_Max_Index);
+   Schmidt_Quasi_Norm        : Legendre_Functions_Array (0 .. Model_Max_Index);
    Index_I, Index_J, Index_L : Integer;
 begin
    X := Sin (Degrees_To_Radians (Spherical_Coordinates.Phig));
@@ -113,6 +111,5 @@ begin
 
    return
      (Pcup            => Pcup,
-      Derivative_Pcup => Derivative_Pcup,
-      Length          => Functions_Amount);
+      Derivative_Pcup => Derivative_Pcup);
 end Geo_Mag.Math.Compute_ALF;

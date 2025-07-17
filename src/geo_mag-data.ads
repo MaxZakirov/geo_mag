@@ -66,10 +66,12 @@ private package Geo_Mag.Data is
       Cos_M_Labmda          : Variables_Array (0 .. Length);
       Sin_M_Labmda          : Variables_Array (0 .. Length);
    end record;
-
-   type Associated_Legendre_Functions (Length : Natural) is record
-      Pcup            : Variables_Array (0 .. Length);
-      Derivative_Pcup : Variables_Array (0 .. Length);
+   
+   type Legendre_Functions_Array is array (Natural range <>) of Float;
+   
+   type Associated_Legendre_Functions is record
+      Pcup            : Legendre_Functions_Array (0 .. Model_Max_Index);
+      Derivative_Pcup : Legendre_Functions_Array (0 .. Model_Max_Index);
    end record;
 
    type Magnetic_Vector is record
