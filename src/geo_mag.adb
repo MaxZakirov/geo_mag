@@ -21,7 +21,9 @@ package body Geo_Mag is
       use Geo_Mag.Data;
       use Geo_Mag.Convertions;
 
-      Base_Magnetic_Model : Geo_Mag.Data.Magnetic_Model renames Geo_Mag.Data.Base_Model;
+      Base_Magnetic_Model : Geo_Mag.Data.Magnetic_Model renames
+        Geo_Mag.Data.Initialization.Base_Model;
+
       Wgs_Data : constant Geo_Mag.Data.Wgs_Coordinates :=
         (Lat          => Latitude,
          Lon          => Longtitude,
@@ -52,7 +54,7 @@ package body Geo_Mag is
              (ALF                   => ALF_Values,
               Mag_Model             => Base_Magnetic_Model,
               Spherical_Harmonics   => Harmonic_Variables,
-              Spherical_Coordinates => Geocentric_Coords, 
+              Spherical_Coordinates => Geocentric_Coords,
               Input_Years => Years);
 
          Field_Vector :=

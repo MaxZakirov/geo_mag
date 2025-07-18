@@ -14,6 +14,7 @@ private package Geo_Mag.Math is
       Spherical_Coordinates : Geocentric_Coordinates;
       Max_Degree            : Integer) return Spherical_Harmonic_Variables;
 
+   --  Timely adjusts WMM coefficeints and
    --  Computes Geomagnetic Field Elements X, Y and Z
    --  in Spherical coordinate system using
    --  spherical harmonic summation.
