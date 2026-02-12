@@ -3,7 +3,7 @@ description = "Library for magnetic declination calculation"
 version = "1.0.0"
 
 authors = ["Max Zakirov"]
-maintainers = ["Max Zakirov <ardo25968@gmail.com>"]
+maintainers = ["Max Zakirov <ardo25968@gmail.com>", "Max Reznik <reznikmm@gmail.com>"]
 licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
 website = ""
-tags = []
+tags = ["navigation", "wmm", "azimuth", "declination", "magnetism"]
